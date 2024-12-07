@@ -132,8 +132,14 @@ nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 
 # First configurations of KeyCloak (26.0)
 
+Login under:
 ```
 https://FQDN/sso
 e.g.
 https://psintern.neuro.uni-bremen.de/sso
 ```
+The password is the one you put in /docker/compose/keycloakserver/.env at KEYCLOAK_ADMIN_PASSWORD.
+
+![First login](001.png)
+
+
