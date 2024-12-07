@@ -4,6 +4,10 @@
 2. You have a working DNS entry and you have non-selfsigned SSL certificates
 3. We assume that a ufw firewall is used.
 
+# Notes 
+
+1. All the docker container will be placed during this installation at /docker/.... . 
+
 # Ready the docker networks
 
 We will have to networks keycloak-network and 
