@@ -143,5 +143,38 @@ The password is the one you put in /docker/compose/keycloakserver/.env at KEYCLO
 ![First login](keycloak_images/001.png)
 
 We switch to login with email (If you allow password recovery via "Forgot password" is your decision): 
-![First login](keycloak_images/002.png)
+![Switch to email login](keycloak_images/002.png)
+
+## Create your own admin user and replace the temporary one
+
+Create a new user
+
+![Create a new user](keycloak_images/003.png)
+
+Fill in the user details
+
+![user details](keycloak_images/004.png)
+
+Set the password
+
+![new password a](keycloak_images/005.png)
+
+![new password b](keycloak_images/006.png)
+
+![new password c](keycloak_images/007.png)
+
+Elevate the user to admin status
+
+![made admin a](keycloak_images/008.png)
+
+![made admin b](keycloak_images/009.png)
+
+![made admin c](keycloak_images/010.png)
+
+**Later** when everything is working as intended, delete the temporary admin user
+
+![remove old admin](keycloak_images/011.png)
+
+
+
 
