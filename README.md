@@ -138,9 +138,14 @@ https://FQDN/sso
 e.g.
 https://psintern.neuro.uni-bremen.de/sso
 ```
+
+---
+
 The password is the one you put in /docker/compose/keycloakserver/.env at KEYCLOAK_ADMIN_PASSWORD.
 
 ![First login](keycloak_images/001.png)
+
+---
 
 We switch to login with email (If you allow password recovery via "Forgot password" is your decision): 
 ![Switch to email login](keycloak_images/002.png)
@@ -151,33 +156,53 @@ Create a new user
 
 ![Create a new user](keycloak_images/003.png)
 
+---
+
 Fill in the user details
 
 ![user details](keycloak_images/004.png)
+
+---
 
 Set the password
 
 ![new password a](keycloak_images/005.png)
 
+---
+
 ![new password b](keycloak_images/006.png)
 
+---
+
 ![new password c](keycloak_images/007.png)
+
+---
 
 Elevate the user to admin status
 
 ![made admin a](keycloak_images/008.png)
 
+---
+
 ![made admin b](keycloak_images/009.png)
 
+---
+
 ![made admin c](keycloak_images/010.png)
+
+---
 
 **Later** (!!!!) when everything is working as intended, delete the temporary admin user
 
 ![remove old admin](keycloak_images/011.png)
 
+---
+
 Log out as admin and login with your new admin user
 
 ![admin logout](keycloak_images/012.png)
+
+---
 
 ![new admin login](keycloak_images/013.png)
 
@@ -187,7 +212,11 @@ Obviously use your own values:
 
 ![email a](keycloak_images/014.png)
 
+---
+
 ![email b](keycloak_images/015.png)
+
+---
 
 Test if the email is working:
 
@@ -199,11 +228,17 @@ Event listeners
 
 ![event a](keycloak_images/017.png)
 
+---
+
 ![event b](keycloak_images/018.png)
+
+---
 
 User events settings
 
 ![event c](keycloak_images/019.png)
+
+---
 
 Admin events settings
 
@@ -213,6 +248,8 @@ Admin events settings
 
 ![localization a](keycloak_images/021.png)
 
+---
+
 ![localization b](keycloak_images/022.png)
 
 # Creating the overleaf client in Keycloak and test it
@@ -221,21 +258,31 @@ Create a new keycloak client for overleaf
 
 ![client a](keycloak_images/023.png)
 
+---
+
 Name it overleaf
 
 ![client b](keycloak_images/024.png)
+
+---
 
 Activate "Client authentication"
 
 ![client c](keycloak_images/025.png)
 
+---
+
 The callback url is required. We will use the test tool url first and replace it later. The test tool helps to find a potential problem easier. 
 
 ![client d](keycloak_images/026.png)
 
+---
+
 Now get the secret of the overleaf client
 
 ![client e](keycloak_images/027.png)
+
+---
 
 ![client f](keycloak_images/028.png)
 
