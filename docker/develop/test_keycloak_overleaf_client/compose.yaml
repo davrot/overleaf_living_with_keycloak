@@ -1,0 +1,31 @@
+services:
+  nodedev:
+    image: "nodedev_image"
+    container_name: nodedev
+    hostname: nodedev
+    restart: always
+
+    networks:
+      - overleaf-network
+      - keycloak-network
+
+    volumes:
+      - /docker/develop/test_keycloak_overleaf_client/data:/data
+
+    ports:
+      - "0.0.0.0:3000:3000"
+
+#    entrypoint: ["sh", "-c", "sleep infinity"]
+
+    entrypoint: >
+      /bin/sh -c "cd /data && sh run.sh"
+
+
+networks:
+
+  keycloak-network:
+    external: true
+
+  overleaf-network:
+    external: true
+
