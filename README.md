@@ -63,4 +63,28 @@ Anywhere on br-acc1f3aff0b7 ALLOW FWD   Anywhere
 Anywhere (v6)              ALLOW FWD   Anywhere (v6) on br-acc1f3aff0b7
 Anywhere (v6) on br-acc1f3aff0b7 ALLOW FWD   Anywhere (v6)
 ```
+# Docker keycloak's postgres (/docker/compose/keycloakpostgres)
+
+The .env file needs to be edited. Fix POSTGRES_PASSWORD=REDACTED with a real password. 
+
+Then start the container with 
+```
+>> sh up.sh
+```
+
+Check the logs if everthing went well:
+```
+>> sh logs.sh
+[...]
+keycloakpostgres  | 2024-12-07 17:37:18.844 UTC [1] LOG:  starting PostgreSQL 16.6 (Debian 16.6-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+keycloakpostgres  | 2024-12-07 17:37:18.845 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+keycloakpostgres  | 2024-12-07 17:37:18.845 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+keycloakpostgres  | 2024-12-07 17:37:18.911 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+keycloakpostgres  | 2024-12-07 17:37:18.981 UTC [65] LOG:  database system was shut down at 2024-12-07 17:37:18 UTC
+keycloakpostgres  | 2024-12-07 17:37:19.017 UTC [1] LOG:  database system is ready to accept connections
+```
+
+
+
+
 
