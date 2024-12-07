@@ -140,6 +140,6 @@ https://psintern.neuro.uni-bremen.de/sso
 ```
 The password is the one you put in /docker/compose/keycloakserver/.env at KEYCLOAK_ADMIN_PASSWORD.
 
-![First login](001.png)
+![First login](keycloak_images/001.png)
 
 
