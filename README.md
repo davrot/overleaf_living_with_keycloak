@@ -2,7 +2,10 @@
 
 1. You system is docker ready.
 2. You have a working DNS entry and you have non-selfsigned SSL certificates
-3. We assume that a ufw firewall is used.
+3. We assume that a ufw firewall is used. And port 443 is open.
+```
+ufw allow 3000
+```
 
 # Notes 
 
@@ -309,7 +312,7 @@ This might seem as a waste of time but I will spare a lot of tears.
 >> sh up.sh
 ```
 
-We check the logs if everthing is file:
+* We check the logs if everthing is file:
 
 ```
 >> sh logs.sh
@@ -321,7 +324,10 @@ nodedev  | Base Path: /nodedev
 nodedev  | Callback URL: https://psintern.neuro.uni-bremen.de/nodedev/login/callback
 ```
 
+* We open the firewall (port 3000)
 
-
+```
+>> sh open_firewall.sh
+```
 
 
