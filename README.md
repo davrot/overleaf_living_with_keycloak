@@ -111,7 +111,7 @@ keycloakserver  | 2024-12-07 17:52:23,718 INFO  [io.quarkus] (main) Installed fe
 
 You need your SSL certificates here.  
 * Put the **public** certificate and the root ca certifcate chain together in /docker/compose/nginx/ca.pem
-* Put the **public** certificate in /docker/compose/nginx/key.pem
+* Put the **private** certificate in /docker/compose/nginx/key.pem
 
 We will go through several nginx.conf files because we can not start the proxy if the services its will proxy are not availabe. Thus we start with nginx_a.conf (containing only the keycloak).
 ```
