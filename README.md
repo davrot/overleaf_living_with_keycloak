@@ -201,10 +201,18 @@ Event listeners
 
 ![event b](keycloak_images/018.png)
 
-User event settings
+User events settings
 
 ![event c](keycloak_images/019.png)
 
 Admin events settings
 
 ![event d](keycloak_images/020.png)
+
+## Localization
+
+![localization a](keycloak_images/021.png)
+
+![localization b](keycloak_images/022.png)
+
+
