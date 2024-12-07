@@ -171,10 +171,13 @@ Elevate the user to admin status
 
 ![made admin c](keycloak_images/010.png)
 
-**Later** when everything is working as intended, delete the temporary admin user
+**Later** (!!!!) when everything is working as intended, delete the temporary admin user
 
 ![remove old admin](keycloak_images/011.png)
 
+Log out as admin and login with your new admin user
 
+![admin logout](keycloak_images/012.png)
 
+![new admin login](keycloak_images/013.png)
 
