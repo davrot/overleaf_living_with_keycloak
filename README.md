@@ -130,3 +130,10 @@ nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-pr
 nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 ```
 
+# First configurations of KeyCloak (26.0)
+
+```
+https://FQDN/sso
+e.g.
+https://psintern.neuro.uni-bremen.de/sso
+```
