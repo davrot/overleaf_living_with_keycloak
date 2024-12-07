@@ -119,5 +119,14 @@ We will go through several nginx.conf files because we can not start the proxy i
 >> sh up.sh
 ```
 
+Check the logs if everthing went well (give it time...):
 
+```
+>> sh logs.sh
+[...]
+nginx  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
+```
 
