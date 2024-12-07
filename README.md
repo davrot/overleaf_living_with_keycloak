@@ -192,3 +192,19 @@ Obviously use your own values:
 Test if the email is working:
 
 ![email test](keycloak_images/016.png)
+
+## Configure the event logging
+
+Event listeners
+
+![event a](keycloak_images/017.png)
+
+![event b](keycloak_images/018.png)
+
+User event settings
+
+![event c](keycloak_images/019.png)
+
+Admin events settings
+
+![event d](keycloak_images/020.png)
