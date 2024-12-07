@@ -321,7 +321,7 @@ nodedev  |
 nodedev  | Server running on port 3000
 nodedev  | Keycloak OpenID Connect Test Application
 nodedev  | Base Path: /nodedev
-nodedev  | Callback URL: https://psintern.neuro.uni-bremen.de/nodedev/login/callback
+nodedev  | Callback URL: https://FQDN/nodedev/login/callback
 ```
 
 * We open the firewall (port 3000)
@@ -346,4 +346,34 @@ nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-te
 nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 ```
+* Use a web browser to surf to https://FQDN/nodedev/
+  
+![test a](keycloak_images/029.png)
 
+---
+
+![test b](keycloak_images/30.png)
+
+* Go to /docker/develop/test_keycloak_overleaf_client and check the log file
+```
+>> sh logs.sh
+nodedev  | 172.20.0.1 - - [07/Dec/2024:23:44:01 +0000] "GET /nodedev/profile HTTP/1.0" 304 - "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+nodedev  | Deserializing user: {
+nodedev  |   id: '00f32e59-be6e-435b-9f1a-6312c1cbcd19',
+nodedev  |   displayName: 'David Rotermund',
+nodedev  |   username: 'davrot@uni-bremen.de',
+nodedev  |   name: { familyName: 'Rotermund', givenName: 'David' },
+nodedev  |   emails: [ { value: 'davrot@uni-bremen.de' } ]
+nodedev  | }
+nodedev  | 172.20.0.1 - - [07/Dec/2024:23:44:35 +0000] "GET /nodedev/ HTTP/1.0" 200 183 "https://psintern.neuro.uni-bremen.de/nodedev/profile" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+```
+
+* If there is no error we can disable the test program.
+* Go to /docker/develop/test_keycloak_overleaf_client and stop the test container
+```
+>> sh down.sh
+```
+
+  
+
+  
