@@ -287,4 +287,41 @@ Now get the secret of the overleaf client
 ![client f](keycloak_images/028.png)
 
 
+## Setting up and using the test tool in /docker/develop/test_keycloak_overleaf_client
+
+This might seem as a waste of time but I will spare a lot of tears.
+
+* Go to /docker/develop/test_keycloak_overleaf_client
+* Build the test container
+```
+>> sh make_image.sh
+```
+* Modifiy get_info.sh such that those values are correct (you remember the secret from the overleaf client a few moments ago?):
+  - FQDN="psintern.neuro.uni-bremen.de"
+  - OIDC_CLIENT_ID=overleaf
+  - OIDC_CLIENT_SECRET=REDACTED
+* run get_info.sh
+```
+>> sh get_info.sh
+```
+* start the container
+```
+>> sh up.sh
+```
+
+We check the logs if everthing is file:
+
+```
+>> sh logs.sh
+nodedev  | > node app.js
+nodedev  | 
+nodedev  | Server running on port 3000
+nodedev  | Keycloak OpenID Connect Test Application
+nodedev  | Base Path: /nodedev
+nodedev  | Callback URL: https://psintern.neuro.uni-bremen.de/nodedev/login/callback
+```
+
+
+
+
 
