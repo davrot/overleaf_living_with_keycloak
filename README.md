@@ -330,4 +330,20 @@ nodedev  | Callback URL: https://psintern.neuro.uni-bremen.de/nodedev/login/call
 >> sh open_firewall.sh
 ```
 
+* Reconfigure nginx
+  - go to /docker/compose/nginx and change the config to nginx_b.conf
+```
+>> sh down.sh
+>> cp nginx_b.conf nginx.conf
+>> sh up.sh
+```
+* Check the logs if it is ready
+```
+>> sh logs.sh
+nginx  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+nginx  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
+```
 
