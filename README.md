@@ -181,3 +181,14 @@ Log out as admin and login with your new admin user
 
 ![new admin login](keycloak_images/013.png)
 
+## Set the email server parameter of keycloak
+
+Obviously use your own values: 
+
+![email a](keycloak_images/014.png)
+
+![email b](keycloak_images/015.png)
+
+Test if the email is working:
+
+![email test](keycloak_images/016.png)
