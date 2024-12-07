@@ -6,7 +6,8 @@
 
 # Notes 
 
-1. All the docker container will be placed during this installation at /docker/.... . 
+1. All the docker container will be placed during this installation at /docker/.... .
+2. Make absolutely sure that the Fully Qualified Domain Name (FQDN) is **NOT** in the /etc/hosts of the server.
 
 # Ready the docker networks
 
@@ -84,6 +85,17 @@ keycloakpostgres  | 2024-12-07 17:37:18.981 UTC [65] LOG:  database system was s
 keycloakpostgres  | 2024-12-07 17:37:19.017 UTC [1] LOG:  database system is ready to accept connections
 ```
 
+# Docker keycloak (/docker/compose/keycloakserver)
+
+The .env file needs to be edited. 
+- Fix POSTGRES_PASSWORD=REDACTED with same password used for the keycloakpostgres container.
+- Fix KEYCLOAK_ADMIN_PASSWORD=REDACTED with a new password.
+- Fix KEYCLOAK_HOSTNAME=YOUR_HOSTNAME with your fully qualified domain name.
+
+Then start the container with 
+```
+>> sh up.sh
+```
 
 
 
