@@ -374,6 +374,7 @@ nodedev  | 172.20.0.1 - - [07/Dec/2024:23:44:35 +0000] "GET /nodedev/ HTTP/1.0" 
 >> sh down.sh
 ```
 
-  
-
-  
+* Run this twice to remove the open ports (IPv4 and IPv6) and answer with y
+```
+>> ufw status numbered | grep 3000 | head -1 | sed s/'\['/''/g | sed s/'\]'/''/g | awk -c {'print "ufw delete " $1'} | sh
+```
