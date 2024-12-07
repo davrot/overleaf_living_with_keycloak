@@ -215,4 +215,29 @@ Admin events settings
 
 ![localization b](keycloak_images/022.png)
 
+# Creating the overleaf client in Keycloak and test it
+
+Create a new keycloak client for overleaf
+
+![client a](keycloak_images/023.png)
+
+Name it overleaf
+
+![client b](keycloak_images/024.png)
+
+Activate "Client authentication"
+
+![client c](keycloak_images/025.png)
+
+The callback url is required. We will use the test tool url first and replace it later. The test tool helps to find a potential problem easier. 
+
+![client d](keycloak_images/026.png)
+
+Now get the secret of the overleaf client
+
+![client e](keycloak_images/027.png)
+
+![client f](keycloak_images/028.png)
+
+
 
