@@ -142,4 +142,6 @@ The password is the one you put in /docker/compose/keycloakserver/.env at KEYCLO
 
 ![First login](keycloak_images/001.png)
 
+We switch to login with email (If you allow password recovery via "Forgot password" is your decision): 
+![First login](keycloak_images/002.png)
 
