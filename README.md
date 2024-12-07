@@ -107,3 +107,17 @@ keycloakserver  | 2024-12-07 17:52:23,718 INFO  [io.quarkus] (main) Profile prod
 keycloakserver  | 2024-12-07 17:52:23,718 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-postgresql, keycloak, narayana-jta, opentelemetry, reactive-routes, rest, rest-jackson, smallrye-context-propagation, smallrye-health, vertx]
 ```
 
+# Docker proxy (/docker/compose/nginx)
+
+You need your SSL certificates here.  
+* Put the **public** certificate and the root ca certifcate chain together in /docker/compose/nginx/ca.pem
+* Put the **public** certificate in /docker/compose/nginx/key.pem
+
+We will go through several nginx.conf files because we can not start the proxy if the services its will proxy are not availabe. Thus we start with nginx_a.conf (containing only the keycloak).
+```
+>> cp nginx_a.conf nginx.conf
+>> sh up.sh
+```
+
+
+
