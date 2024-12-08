@@ -500,15 +500,20 @@ nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 
 * Got to the https://FQDN/launchpad with a web browser
 * Enter your admin user email address and passwort into the fields.
+
 ---
 
 * Login with the admin credentials
 
 ![admin a](keycloak_images/031.png)
 
+---
+
 * Now we are redirected to the true launchpad page
 
 ![admin b](keycloak_images/032.png)
+
+---
 
 * Test if the system is able to send email correctly
 
