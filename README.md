@@ -432,3 +432,52 @@ CONTAINER ID   IMAGE                            COMMAND                  CREATED
 [...]
 ```
 
+# Docker Container Overleaf (/docker/compose/overleafserver) - First start
+
+* Go into /docker/compose/overleafserver
+
+* Get the tex live container
+
+```
+>> sh pull_texlive.sh
+```
+
+* Modify get_info.sh in /docker/compose/overleafserver . Fix the following parameters:
+    - FQDN
+    - OIDC_CLIENT_ID
+    - OIDC_CLIENT_SECRET
+    - OVERLEAF_EMAIL_PASSWORD
+    - OVERLEAF_EMAIL_FROM_ADDRESS
+    - OVERLEAF_EMAIL_SMTP_HOST
+    - OVERLEAF_EMAIL_SMTP_PORT
+    - OVERLEAF_EMAIL_SMTP_SECURE
+    - OVERLEAF_EMAIL_SMTP_USER
+    - OVERLEAF_APP_NAME
+    - OVERLEAF_NAV_TITLE
+    - OVERLEAF_CUSTOM_EMAIL_FOOTER
+
+* Then create the .env file via:
+```
+>> sh get_info.sh
+```
+* Start the overleaf container
+```
+>> sh up.sh
+```  
+
+* Go into the proxy directory /docker/compose/nginx and switch to config C:
+
+```
+>> sh down.sh
+>> cp nginx_c.conf nginx.conf
+>> sh up.sh
+```
+* Look at the logs:
+```
+>> sh logs.sh
+nginx  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+nginx  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
+```
