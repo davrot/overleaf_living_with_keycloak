@@ -1,0 +1,10 @@
+--- original/LatexRunner.js_5.2.1	2024-12-08 16:46:12.959765103 +0000
++++ ../services/clsi/app/js/LatexRunner.js_5.2.1	2024-12-08 16:02:12.472592396 +0000
+@@ -161,6 +161,7 @@
+     '-auxdir=$COMPILE_DIR',
+     '-outdir=$COMPILE_DIR',
+     '-synctex=1',
++    '-shell-escape',
+     '-interaction=batchmode'
+   )
+ 

@@ -1,0 +1,20 @@
+--- original/ProjectEditorHandler.js_5.2.1	2024-12-08 16:45:52.409044282 +0000
++++ ../services/web/app/src/Features/Project/ProjectEditorHandler.js_5.2.1	2024-12-08 16:02:12.473592384 +0000
+@@ -8,7 +8,7 @@
+ }
+ 
+ module.exports = ProjectEditorHandler = {
+-  trackChangesAvailable: false,
++  trackChangesAvailable: true,
+ 
+   buildProjectModelView(project, members, invites, deletedDocsFromDocstore) {
+     let owner, ownerFeatures
+@@ -57,7 +57,7 @@
+       references: false,
+       referencesSearch: false,
+       mendeley: false,
+-      trackChanges: false,
++      trackChanges: true,
+       trackChangesVisible: ProjectEditorHandler.trackChangesAvailable,
+       symbolPalette: false,
+     })
