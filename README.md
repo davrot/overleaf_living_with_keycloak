@@ -468,6 +468,16 @@ CONTAINER ID   IMAGE                            COMMAND                  CREATED
 * Look at the logs (takes some time):
 ```
 >> sh logs.sh
+overleafserver  | Done.
+overleafserver  | Flushing log queue.
+overleafserver  | No recovery of doc versions needed.
+overleafserver  | *** Booting runit daemon...
+overleafserver  | *** Runit started as PID 182
+overleafserver  | >> Setting permissions on docker socket
+overleafserver  | Dec  8 02:19:35 overleafserver cron[195]: (CRON) INFO (pidfile fd = 3)
+overleafserver  | Dec  8 02:19:35 overleafserver cron[195]: (CRON) INFO (Running @reboot jobs)
+overleafserver  | Dec  8 02:20:01 overleafserver CRON[374]: (root) CMD ( /overleaf/cron/delete-projects.sh >> /var/log/overleaf/cron-delete-projects.log 2>&1)
+overleafserver  | Dec  8 02:20:01 overleafserver CRON[375]: (root) CMD ( /overleaf/cron/project-history-periodic-flush.sh >> /var/log/overleaf/cron-project-history-periodic-flush.log 2>&1)
 ```
 
 * Go into the proxy directory /docker/compose/nginx and switch to config C:
@@ -486,3 +496,21 @@ nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-te
 nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 ```
+## The overleaflaunchpad https://FQDN/launchpad
+
+* Got to the https://FQDN/launchpad with a web browser
+* Enter your admin user email address and passwort into the fields.
+---
+
+* Login with the admin credentials
+
+![admin a](keycloak_images/031.png)
+
+* Now we are redirected to the true launchpad page
+
+![admin b](keycloak_images/032.png)
+
+* Test if the system is able to send email correctly
+
+![admin c](keycloak_images/033.png)
+
