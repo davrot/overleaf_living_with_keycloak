@@ -352,7 +352,7 @@ nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 
 ---
 
-![test b](keycloak_images/30.png)
+![test b](keycloak_images/030.png)
 
 * Go to /docker/develop/test_keycloak_overleaf_client and check the log file
 ```
