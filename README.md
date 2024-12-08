@@ -498,7 +498,7 @@ nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 ```
 ## The overleaflaunchpad https://FQDN/launchpad
 
-* Got to the https://FQDN/launchpad with a web browser
+* Go to the URL https://FQDN/launchpad with a web browser
 * Enter your admin user email address and passwort into the fields.
 
 ---
