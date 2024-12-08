@@ -379,3 +379,12 @@ nodedev  | 172.20.0.1 - - [07/Dec/2024:23:44:35 +0000] "GET /nodedev/ HTTP/1.0" 
 >> ufw status numbered | grep 3000 | head -1 | sed s/'\['/''/g | sed s/'\]'/''/g | awk -c {'print "ufw delete " $1'} > close_firewall_todo.sh
 >> sh close_firewall_todo.sh
 ```
+
+* Clean up the proxy config in /docker/compose/nginx
+
+```
+>> sh down.sh
+>> cp nginx_a.conf nginx.conf
+>> sh up.sh
+```
+
