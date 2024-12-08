@@ -395,9 +395,16 @@ nodedev  | 172.20.0.1 - - [07/Dec/2024:23:44:35 +0000] "GET /nodedev/ HTTP/1.0" 
 >> sh up.sh
 ```
 
-* Check the logs if it is healthy (give it some time for the first start)
+* Check the logs if it is healthy (give it some time for the first start, but it looks like there is no steady state to wait for)
 ```
 >> sh logs.sh
+```
+
+```
+>> docker ps
+CONTAINER ID   IMAGE                            COMMAND                  CREATED             STATUS                   PORTS       
+55f1febfb50a   mongo:6.0                        "docker-entrypoint.s…"   8 minutes ago       Up 7 minutes (healthy)   27017/tcp                                                       overleafmongo
+[...]
 ```
 
 # Docker container overleaf's redis (/docker/compose/overleafredis)
@@ -417,3 +424,11 @@ overleafredis  | 1:C 08 Dec 2024 01:31:03.442 # Configuration loaded
 overleafredis  | 1:M 08 Dec 2024 01:31:03.443 # Server initialized
 overleafredis  | 1:M 08 Dec 2024 01:31:03.443 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
 ```
+
+```
+>> docker ps
+CONTAINER ID   IMAGE                            COMMAND                  CREATED             STATUS                   PORTS                                                           NAMES
+5d29d4f246ce   redis:6.2-alpine                 "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes (healthy)   6379/tcp                                                        overleafredis
+[...]
+```
+
