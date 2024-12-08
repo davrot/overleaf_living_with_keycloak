@@ -399,3 +399,16 @@ nodedev  | 172.20.0.1 - - [07/Dec/2024:23:44:35 +0000] "GET /nodedev/ HTTP/1.0" 
 ```
 >> sh logs.sh
 ```
+
+# Docker container overleaf's redis (/docker/compose/overleafredis)
+
+* Go the redis directory /docker/compose/overleafredis
+* Start the container via
+```
+>> sh up.sh
+```
+
+* Check the logs if it is healthy (give it some time for the first start)
+```
+>> sh logs.sh
+```
