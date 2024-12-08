@@ -387,4 +387,15 @@ nodedev  | 172.20.0.1 - - [07/Dec/2024:23:44:35 +0000] "GET /nodedev/ HTTP/1.0" 
 >> cp nginx_a.conf nginx.conf
 >> sh up.sh
 ```
+# Docker container overleaf's mongo db (/docker/compose/overleafmongo)
 
+* Go the mongo db directory /docker/compose/overleafmongo
+* Start the container via
+```
+>> sh up.sh
+```
+
+* Check the logs if it is healthy (give it some time for the first start)
+```
+>> sh logs.sh
+```
