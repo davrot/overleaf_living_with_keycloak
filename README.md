@@ -4,7 +4,7 @@
 2. You have a working DNS entry and you have non-selfsigned SSL certificates
 3. We assume that a ufw firewall is used. And port 443 is open.
 ```
-ufw allow 3000
+ufw allow 443
 ```
 
 # Notes 
@@ -464,6 +464,11 @@ CONTAINER ID   IMAGE                            COMMAND                  CREATED
 ```
 >> sh up.sh
 ```  
+
+* Look at the logs (takes some time):
+```
+>> sh logs.sh
+```
 
 * Go into the proxy directory /docker/compose/nginx and switch to config C:
 
