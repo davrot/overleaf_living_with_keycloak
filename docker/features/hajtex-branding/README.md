@@ -1,3 +1,5 @@
+From the HajTex Project 
+
 # HajTeX Branding
 
 This adjustment changes the color scheme and logos used throughout Overleaf to represent HajTeX instead.
