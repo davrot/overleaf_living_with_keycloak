@@ -14,7 +14,7 @@
 }
 ```
   
-* In data/main.py: (pip install captcha flask email_validator)
+* In data/main.py: (pip install captcha flask email_validator pymongo)
   * I simplied the captcha to 6x A . If you want something else change line 34.
   * I am not using the generated captcha_image in the webpage. I thing modern machine learning makes no difference if it is a image or a text. I am using the captcha just to block simple bots. They cannot create an account anyhow. But if you want to, you can add it back in by using the "image"
 ```
