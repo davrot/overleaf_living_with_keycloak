@@ -1,6 +1,9 @@
 import pymongo
 
-def check_user(email_to_find: str, container_name:str = "overleafmongo", port: int = 27017) -> bool:
+
+def check_user(
+    email_to_find: str, container_name: str = "overleafmongo", port: int = 27017
+) -> bool:
     client = pymongo.MongoClient(container_name, port)
     db = client.sharelatex
     users = db.users
@@ -10,4 +13,3 @@ def check_user(email_to_find: str, container_name:str = "overleafmongo", port: i
         return False
     else:
         return True
-
