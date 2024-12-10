@@ -15,6 +15,7 @@ services:
     volumes:
       - /docker/compose/overleafmongo/data_db:/data/db
       - /docker/compose/overleafmongo/data_configdb:/data/configdb
+      - /docker/compose/overleafmongo/backup:/backup
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - overleaf-network
