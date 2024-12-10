@@ -1,5 +1,6 @@
-{    
+{
     "keycloak_url": "https://overleaf.fb1.uni-bremen.de/sso",
+    "keycloak_login": "https://overleaf.pip.uni-bremen.de/login/oidc",
     "admin_username": "automation@non.no",
     "admin_password": "REDACTED",
     "client_id": "admin-cli",

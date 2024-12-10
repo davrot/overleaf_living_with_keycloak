@@ -6,13 +6,13 @@ from check_invites import check_invites
 from check_user import check_user
 from add_user import add_keycloak_user
 
+
 def process_emails(
     mail_address: str,
     config_file: str = "allowed_domains.json",
     blocked_user_file: str = "blocked_users.json",
-    container_name_mongo:str = "overleafmongo", 
+    container_name_mongo: str = "overleafmongo",
     port_mongo: int = 27017,
-    container_name_overleaf: str = "overleafserver",
 ) -> bool:
 
     with open(config_file, "r") as file:
@@ -37,10 +37,14 @@ def process_emails(
 
     is_email_allowed: bool = False
 
-    if check_invites(email_to_find=mail_address,container_name=container_name_mongo, port=port_mongo):
+    if check_invites(
+        email_to_find=mail_address, container_name=container_name_mongo, port=port_mongo
+    ):
         is_email_allowed = True
 
-    if check_user(email_to_find=mail_address,container_name=container_name_mongo, port=port_mongo):
+    if check_user(
+        email_to_find=mail_address, container_name=container_name_mongo, port=port_mongo
+    ):
         is_email_allowed = True
 
     if is_email_allowed is False:
@@ -53,5 +57,3 @@ def process_emails(
             return False
 
     return add_keycloak_user(mail_address)
-
-
