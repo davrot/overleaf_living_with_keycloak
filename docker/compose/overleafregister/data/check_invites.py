@@ -1,6 +1,9 @@
 import pymongo
 
-def check_invites(email_to_find: str,container_name:str = "overleafmongo", port: int = 27017) -> bool:
+
+def check_invites(
+    email_to_find: str, container_name: str = "overleafmongo", port: int = 27017
+) -> bool:
     client = pymongo.MongoClient(container_name, port)
     db = client.sharelatex
     project_invites = db.projectInvites
@@ -10,4 +13,3 @@ def check_invites(email_to_find: str,container_name:str = "overleafmongo", port:
         return False
     else:
         return True
-
