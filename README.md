@@ -12,6 +12,15 @@ ufw allow 443
 1. All the docker container will be placed during this installation at /docker/.... .
 2. Make absolutely sure that the Fully Qualified Domain Name (FQDN) is **NOT** in the /etc/hosts of the server.
 
+
+# Preparations
+
+Install pip for python
+
+```
+>> apt -y install python3-pip python3-strictyaml
+```
+
 # Ready the docker networks
 
 We will have to networks keycloak-network and 
