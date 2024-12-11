@@ -1,3 +1,0 @@
-volumes:
-  - /docker/compose/overleafserver/data:/var/lib/overleaf
-  - /var/run/docker.sock:/var/run/docker.sock
