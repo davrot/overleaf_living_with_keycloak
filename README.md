@@ -528,7 +528,43 @@ nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 
 ![admin c](keycloak_images/033.png)
 
-# Activate HajTex branding -==- MANDITORY -==- (/docker/features/hajtex-branding)
+# Preperation of the main container
+
+Go to /docker/compose/overleafserver and edit the file build_env.sh
+
+```
+FQDN="psintern.neuro.uni-bremen.de"
+
+# KeyCloak
+OIDC_CLIENT_ID=overleaf
+OIDC_CLIENT_SECRET=REDACTED
+OIDC_ENABLE=true
+OIDC_NAME_SHORT="OIDC"
+OIDC_NAME_LONG="OIDC"
+
+# Email
+OVERLEAF_EMAIL_PASSWORD=REDACTED
+OVERLEAF_EMAIL_FROM_ADDRESS=overleaf@uni-bremen.de
+OVERLEAF_EMAIL_SMTP_HOST=smtp.uni-bremen.de
+OVERLEAF_EMAIL_SMTP_PORT=465
+OVERLEAF_EMAIL_SMTP_SECURE=true
+OVERLEAF_EMAIL_SMTP_USER=overleaf
+
+# Other
+OVERLEAF_APP_NAME="University of Bremen -- Overleaf"
+OVERLEAF_NAV_TITLE="Uni Bremen Overleaf"
+OVERLEAF_CUSTOM_EMAIL_FOOTER="University of Bremen -- Overleaf"
+```
+
+Make sure that you are happy with the settings and then run
+
+```
+>> sh build_env.sh
+```
+
+Please check the /docker/compose/overleafserver/.env that comes out of the process. 
+
+# Activate HajTex branding -==- MANDATORY -==- (/docker/features/hajtex-branding)
 
 ```
 >> cd /docker/features/hajtex-branding
@@ -576,7 +612,7 @@ To disable it:
 >> sh disable_feature.sh
 ```
 
-# Activate OICD feature
+# Activate OICD feature (/docker/features/oidc)
 
 We need to fix the callback link int keycloak to https://FQDN/login/oidc/callback
 
@@ -588,7 +624,16 @@ We need to fix the callback link int keycloak to https://FQDN/login/oidc/callbac
 
 ---
 
+```
+>> cd /docker/features/oidc
+>> sh enable_feature.sh
+```
 
+To disable it: 
+```
+>> cd /docker/features/oidc
+>> sh disable_feature.sh
+```
 
 
 ## Make a HajTex user into an admin
@@ -643,3 +688,11 @@ And this shows you all the registered users:
 ```
 sh exec_list_user.sh
 ```
+
+# Restart the container
+
+```
+>> cd /docker/compose/overleafserver
+>> up.sh
+```
+
