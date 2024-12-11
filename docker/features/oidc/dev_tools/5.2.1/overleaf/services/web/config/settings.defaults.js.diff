@@ -1,0 +1,25 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-11 19:54:46.337125535 +0000
++++ ../5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-08 16:02:12.468592444 +0000
+@@ -113,6 +113,13 @@
+ module.exports = {
+   env: 'server-ce',
+ 
++  oidc: {
++    enable: process.env.OIDC_ENABLE || false,
++    updateUserDetailsOnLogin: process.env.OIDC_ENABLE || false,
++    nameShort: process.env.OIDC_NAME_SHORT || "OIDC",
++    nameLong: process.env.OIDC_NAME_LONG || "OIDC",
++  },
++
+   limits: {
+     httpGlobalAgentMaxSockets: 300,
+     httpsGlobalAgentMaxSockets: 300,
+@@ -783,8 +790,6 @@
+   reloadModuleViewsOnEachRequest: process.env.NODE_ENV === 'development',
+ 
+   rateLimit: {
+-    subnetRateLimiterDisabled:
+-      process.env.SUBNET_RATE_LIMITER_DISABLED === 'true',
+     autoCompile: {
+       everyone: process.env.RATE_LIMIT_AUTO_COMPILE_EVERYONE || 100,
+       standard: process.env.RATE_LIMIT_AUTO_COMPILE_STANDARD || 25,

@@ -1,0 +1,2 @@
+volumes:
+  - /docker/features/shell-escape/5.2.1/overleaf/services/clsi/app/js/LatexRunner.js:/overleaf/services/clsi/app/js/LatexRunner.js

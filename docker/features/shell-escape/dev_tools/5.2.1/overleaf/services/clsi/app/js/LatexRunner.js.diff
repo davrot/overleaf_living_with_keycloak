@@ -1,0 +1,10 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/clsi/app/js/LatexRunner.js	2024-12-11 20:14:31.467936815 +0000
++++ ../5.2.1/overleaf/services/clsi/app/js/LatexRunner.js	2024-12-08 16:02:12.472592396 +0000
+@@ -161,6 +161,7 @@
+     '-auxdir=$COMPILE_DIR',
+     '-outdir=$COMPILE_DIR',
+     '-synctex=1',
++    '-shell-escape',
+     '-interaction=batchmode'
+   )
+ 

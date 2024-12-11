@@ -1,0 +1,12 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/app/src/Features/User/UserPagesController.js	2024-12-11 19:54:23.478398696 +0000
++++ ../5.2.1/overleaf/services/web/app/src/Features/User/UserPagesController.js	2024-12-08 16:02:12.465592480 +0000
+@@ -59,6 +59,9 @@
+   if (Settings.saml && Settings.saml.updateUserDetailsOnLogin) {
+     shouldAllowEditingDetails = false
+   }
++  if (Settings.oidc && Settings.oidc.updateUserDetailsOnLogin) {
++    shouldAllowEditingDetails = false
++  }
+   const oauthProviders = Settings.oauthProviders || {}
+ 
+   const user = await UserGetter.promises.getUser(userId)

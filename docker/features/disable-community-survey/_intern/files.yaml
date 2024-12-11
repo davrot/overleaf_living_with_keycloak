@@ -1,0 +1,2 @@
+volumes:
+  - /docker/features/disable-community-survey/5.2.1/overleaf/services/web/app/src/Features/Project/ProjectListController.js:/overleaf/services/web/app/src/Features/Project/ProjectListController.js

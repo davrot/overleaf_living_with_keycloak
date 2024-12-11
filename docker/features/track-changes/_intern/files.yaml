@@ -1,0 +1,6 @@
+volumes:
+  - /docker/features/track-changes/5.2.1/overleaf/services/web/modules/track-changes/app/src/TrackChangesRouter.js:/overleaf/services/web/modules/track-changes/app/src/TrackChangesRouter.js
+  - /docker/features/track-changes/5.2.1/overleaf/services/web/modules/track-changes/app/src/TrackChangesController.js:/overleaf/services/web/modules/track-changes/app/src/TrackChangesController.js
+  - /docker/features/track-changes/5.2.1/overleaf/services/web/modules/track-changes/index.js:/overleaf/services/web/modules/track-changes/index.js
+  - /docker/features/track-changes/5.2.1/overleaf/services/web/app/src/Features/Project/ProjectEditorHandler.js:/overleaf/services/web/app/src/Features/Project/ProjectEditorHandler.js
+  - /docker/features/track-changes/5.2.1/overleaf/services/web/config/settings.defaults.js:/overleaf/services/web/config/settings.defaults.js

@@ -1,0 +1,20 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/app/src/Features/Project/ProjectEditorHandler.js	2024-12-11 19:51:30.829461929 +0000
++++ ../5.2.1/overleaf/services/web/app/src/Features/Project/ProjectEditorHandler.js	2024-12-08 16:02:12.473592384 +0000
+@@ -8,7 +8,7 @@
+ }
+ 
+ module.exports = ProjectEditorHandler = {
+-  trackChangesAvailable: false,
++  trackChangesAvailable: true,
+ 
+   buildProjectModelView(project, members, invites, deletedDocsFromDocstore) {
+     let owner, ownerFeatures
+@@ -57,7 +57,7 @@
+       references: false,
+       referencesSearch: false,
+       mendeley: false,
+-      trackChanges: false,
++      trackChanges: true,
+       trackChangesVisible: ProjectEditorHandler.trackChangesAvailable,
+       symbolPalette: false,
+     })

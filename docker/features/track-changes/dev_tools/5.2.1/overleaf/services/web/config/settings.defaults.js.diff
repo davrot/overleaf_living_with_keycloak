@@ -1,0 +1,10 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-11 19:54:46.337125535 +0000
++++ ../5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-08 16:02:12.473592384 +0000
+@@ -976,6 +976,7 @@
+     'launchpad',
+     'server-ce-scripts',
+     'user-activate',
++    'track-changes',
+   ],
+   viewIncludes: {},
+ 

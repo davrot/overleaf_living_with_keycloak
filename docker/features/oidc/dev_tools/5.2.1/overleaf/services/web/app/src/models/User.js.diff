@@ -1,0 +1,11 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/app/src/models/User.js	2024-12-11 19:54:32.684288686 +0000
++++ ../5.2.1/overleaf/services/web/app/src/models/User.js	2024-12-08 16:02:12.466592468 +0000
+@@ -214,6 +214,8 @@
+     analyticsId: { type: String },
+     completedTutorials: Schema.Types.Mixed,
+     suspended: { type: Boolean },
++    oidcUID: { type: String },
++    oidcUsername: { type: String },
+   },
+   { minimize: false }
+ )
