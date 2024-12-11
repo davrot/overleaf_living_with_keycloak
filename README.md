@@ -528,6 +528,54 @@ nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 
 ![admin c](keycloak_images/033.png)
 
+# Activate HajTex branding -==- MANDITORY -==- (/docker/features/hajtex-branding)
+
+```
+>> cd /docker/features/hajtex-branding
+>> sh enable_feature.sh
+```
+
+# Activate Disable Community Survey Fix (/docker/features/disable-community-survey)
+
+```
+>> cd /docker/features/disable-community-survey
+>> sh enable_feature.sh
+```
+
+To re-enable it: 
+```
+>> cd /docker/features/disable-community-survey
+>> sh disable_feature.sh
+```
+
+# Activate Shell Escape (/docker/features/shell-escape)
+
+This feature is important for several often used latex packages. However, it should only be used in conjunction with TexLive docker container for compiling latex. Luckily, the use of TexLive docker container is the default setting for the main container. 
+
+```
+>> cd /docker/features/shell-escape
+>> sh enable_feature.sh
+```
+
+To disable it: 
+```
+>> cd /docker/features/shell-escape
+>> sh disable_feature.sh
+```
+
+# Activate Tracking of changes and comments (/docker/features/track-changes)
+
+```
+>> cd /docker/features/track-changes
+>> sh enable_feature.sh
+```
+
+To disable it: 
+```
+>> cd /docker/features/track-changes
+>> sh disable_feature.sh
+```
+
 # Activate OICD feature
 
 We need to fix the callback link int keycloak to https://FQDN/login/oidc/callback
@@ -539,6 +587,9 @@ We need to fix the callback link int keycloak to https://FQDN/login/oidc/callbac
 ![fix callback b](keycloak_images/035.png)
 
 ---
+
+
+
 
 ## Make a HajTex user into an admin
 
