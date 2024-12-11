@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+sh dev_tools/_get_manifest.sh
+
 pwd=$(pwd)
 
 version=$(cat /docker/version)
