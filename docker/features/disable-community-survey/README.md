@@ -1,1 +1,0 @@
-Removes the survey in the project list window
