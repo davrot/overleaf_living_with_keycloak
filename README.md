@@ -443,7 +443,7 @@ CONTAINER ID   IMAGE                            COMMAND                  CREATED
 
 # Docker Container Overleaf (/docker/compose/overleafserver) - First start
 
-* Go into /docker/compose/overleafserver
+* Go into /docker/compose/
 
 * Get the tex live container
 
