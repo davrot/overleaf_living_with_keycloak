@@ -20,6 +20,18 @@ volumes:
   - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/img/ol-brand/overleaf-o-dark.svg:/overleaf/services/web/public/img/ol-brand/overleaf-o-dark.svg
   - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/img/ol-brand/overleaf-o-white.svg:/overleaf/services/web/public/img/ol-brand/overleaf-o-white.svg
   - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/favicon-16x16.png:/overleaf/services/web/public/favicon-16x16.png
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-11f5aad09ca0c7458541.svg:/overleaf/services/web/public/images/overleaf-11f5aad09ca0c7458541.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-o-grey.svg:/overleaf/services/web/public/images/overleaf-o-grey.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-white.svg:/overleaf/services/web/public/images/overleaf-white.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-black.svg:/overleaf/services/web/public/images/overleaf-black.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-o-white-98904fbb7829929adf9f.svg:/overleaf/services/web/public/images/overleaf-o-white-98904fbb7829929adf9f.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-o.svg:/overleaf/services/web/public/images/overleaf-o.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf.svg:/overleaf/services/web/public/images/overleaf.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-black-4ff59a38c75ed119cbb3.svg:/overleaf/services/web/public/images/overleaf-black-4ff59a38c75ed119cbb3.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-o-grey-f7605837650fa8d6aab8.svg:/overleaf/services/web/public/images/overleaf-o-grey-f7605837650fa8d6aab8.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-o-7052183c04d0611b79e2.svg:/overleaf/services/web/public/images/overleaf-o-7052183c04d0611b79e2.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-o-white.svg:/overleaf/services/web/public/images/overleaf-o-white.svg
+  - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/public/images/overleaf-white-65b70e33f35fccdf6f8d.svg:/overleaf/services/web/public/images/overleaf-white-65b70e33f35fccdf6f8d.svg
   - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/frontend/stylesheets/variables/colors.less:/overleaf/services/web/frontend/stylesheets/variables/colors.less
   - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/locales/ja.json:/overleaf/services/web/locales/ja.json
   - /docker/features/hajtex-branding/5.2.1/overleaf/services/web/locales/pt.json:/overleaf/services/web/locales/pt.json
