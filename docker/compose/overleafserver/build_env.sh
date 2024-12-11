@@ -24,7 +24,7 @@ OVERLEAF_CUSTOM_EMAIL_FOOTER="University of Bremen -- Overleaf"
 
 OVERLEAF_SITE_URL=https://${FQDN}
 URL=https://${FQDN}/sso/realms/master/.well-known/openid-configuration
-OIDC_CALLBACK_URL=https://${FQDN}/nodev/login/callback
+OIDC_CALLBACK_URL=https://${FQDN}/login/oidc/callback
 
 echo ${URL}
 wget -O openid-configuration ${URL}
