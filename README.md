@@ -528,3 +528,14 @@ nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
 
 ![admin c](keycloak_images/033.png)
 
+# Activate OICD feature
+
+We need to fix the callback link int keycloak to https://FQDN/login/oidc/callback
+
+![fix callback a](keycloak_images/034.png)
+
+---
+
+![fix callback b](keycloak_images/035.png)
+
+---
