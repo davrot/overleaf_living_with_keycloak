@@ -1,0 +1,14 @@
+--- original/UserPrimaryEmailCheckHandler.js_5.2.1	2024-12-08 16:44:40.906034768 +0000
++++ ../services/web/app/src/Features/User/UserPrimaryEmailCheckHandler.js_5.2.1	2024-12-08 16:02:12.465592480 +0000
+@@ -6,6 +6,11 @@
+   lastPrimaryEmailCheck,
+   signUpDate,
+ }) {
++  if(Settings.oidc.enable) {
++    // we never require a check, as emails are retrieved from the OIDC provider
++    return false
++  }
++
+   const hasExpired = date => {
+     if (!date) {
+       return true
