@@ -1,0 +1,11 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/app/views/user_membership/group-managers-react.js	2024-12-11 19:57:26.841207579 +0000
++++ ../5.2.1/overleaf/services/web/app/views/user_membership/group-managers-react.js	2024-12-11 00:47:11.621148296 +0000
+@@ -1023,7 +1023,7 @@
+ }
+ else
+ if (!settings.nav.hide_powered_by) {
+-pug_html = pug_html + "\u003Cli\u003E© 2024\n\u003Ca href=\"https:\u002F\u002Fwww.overleaf.com\u002Ffor\u002Fenterprises\"\u003EPowered by Overleaf\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
++pug_html = pug_html + "\u003Cli\u003E© 2024\n\u003Ca href=\"https://github.com/HajTeX/HajTeX"\u003EPowered by HajTex\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
+ if (showLanguagePicker || hasCustomLeftNav) {
+ pug_html = pug_html + "\u003Cli\u003E\u003Cstrong class=\"text-muted\"\u003E|\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E";
+ }

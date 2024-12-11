@@ -1,0 +1,11 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/app/views/layout/footer-marketing.pug	2024-12-11 19:57:10.654401001 +0000
++++ ../5.2.1/overleaf/services/web/app/views/layout/footer-marketing.pug	2024-12-11 00:47:11.573148860 +0000
+@@ -11,7 +11,7 @@
+ 						//- year of Server Pro release, static
+ 						| © 2024
+ 						|
+-						a(href='https://www.overleaf.com/for/enterprises') Powered by Overleaf
++						a(href='https://github.com/HajTeX/HajTeX') Powered by HajTex
+ 
+ 					if showLanguagePicker || hasCustomLeftNav
+ 						li
