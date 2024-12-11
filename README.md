@@ -570,11 +570,11 @@ User status changed
 ```
 Before 
 
-![admin a](keycloak_images/035.png)
+![admin a](keycloak_images/036.png)
 
 after a logout and login cycle we see: 
 
-![admin a](keycloak_images/036.png)
+![admin a](keycloak_images/037.png)
 
 ### Other tools in /docker/compose/check_users
 
