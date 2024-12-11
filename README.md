@@ -539,3 +539,56 @@ We need to fix the callback link int keycloak to https://FQDN/login/oidc/callbac
 ![fix callback b](keycloak_images/035.png)
 
 ---
+
+## Make a HajTex user into an admin
+
+For this we use the tools in /docker/compose/check_users .
+
+Preparations: 
+```
+>> cd /docker/compose/check_users
+>> sh make_image.sh
+>> sh up.sh
+```
+
+This elevates a user with the email davrot@uni-bremen.de to an admin:
+```
+>> sh exec_make_admin.sh davrot@uni-bremen.de
+```
+The result is: 
+```
+User name: davrot@uni-bremen.de
+User status was: False
+User status changed
+```
+
+If you do it again, it informs you that it was already okay:
+```
+User name: davrot@uni-bremen.de
+User status was: True
+User status changed
+```
+Before 
+
+![admin a](keycloak_images/035.png)
+
+after a logout and login cycle we see: 
+
+![admin a](keycloak_images/036.png)
+
+### Other tools in /docker/compose/check_users
+
+You can delete a user with the email davrot@uni-bremen.de
+```
+>> sh delete_user.sh davrot@uni-bremen.de
+```
+
+This shows you all the invited user:
+```
+> sh exec_list_invited.sh
+```
+
+And this shows you all the registered users:
+```
+sh exec_list_user.sh
+```
