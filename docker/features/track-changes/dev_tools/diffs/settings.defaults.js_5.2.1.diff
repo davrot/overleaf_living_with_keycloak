@@ -1,0 +1,10 @@
+--- original/settings.defaults.js_5.2.1	2024-12-08 16:45:52.467043490 +0000
++++ ../services/web/config/settings.defaults.js_5.2.1	2024-12-08 16:02:12.473592384 +0000
+@@ -976,6 +976,7 @@
+     'launchpad',
+     'server-ce-scripts',
+     'user-activate',
++    'track-changes',
+   ],
+   viewIncludes: {},
+ 
