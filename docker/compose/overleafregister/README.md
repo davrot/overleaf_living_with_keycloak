@@ -11,8 +11,8 @@ First of all, build the docker image:
   * config.json: Here you need to adapt the FQDNs and the two passwords:
 ```
 {
-    "keycloak_url": "https://overleaf.fb1.uni-bremen.de/sso",
-    "keycloak_login": "https://overleaf.pip.uni-bremen.de/login/oidc",
+    "keycloak_url": "https://psintern.neuro.uni-bremen.de/sso",
+    "keycloak_login": "https://psintern.neuro.uni-bremen.de/login/oidc",
     "admin_username": "automation@non.no",
     "admin_password": "REDACTED",
     "client_id": "admin-cli",
