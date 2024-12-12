@@ -698,9 +698,50 @@ sh exec_list_user.sh
 
 # Prepare the register container for externals (/docker/compose/overleafregister/data)
 
-## Keycloak: Add service user
+## Keycloak: Set up service user
 
-## Keycloak: Modify client 
+![add special user a](keycloak_images/038.png)
 
+---
 
+![add special user b](keycloak_images/039.png)
 
+---
+
+![add special user c](keycloak_images/040.png)
+
+---
+
+![add special user d](keycloak_images/041.png)
+
+---
+
+![add special user e](keycloak_images/042.png)
+
+---
+
+![add special user f](keycloak_images/043.png)
+
+---
+
+![add special user g](keycloak_images/044.png)
+
+---
+
+![add special user h](keycloak_images/045.png)
+
+---
+
+## Keycloak: Modify admin-cli client 
+
+![admin-cli a](keycloak_images/046.png)
+
+---
+
+![admin-cli b](keycloak_images/047.png)
+
+---
+
+![admin-cli c](keycloak_images/048.png)
+
+---
