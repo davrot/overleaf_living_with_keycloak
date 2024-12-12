@@ -66,7 +66,7 @@ docker run hello-world
 ```
 # Add root to the /etc/aliases file and add the msmtprc file to /etc
 apt -y install msmtp msmtp-mta mailutils
-hostname overleaf.fb1.uni-bremen.de
+hostname [FQDN]
 cat /etc/hostname
 vi /etc/msmtprc
 chmod 644 /etc/msmtprc
