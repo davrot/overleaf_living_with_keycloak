@@ -804,4 +804,16 @@ Inside the container you can use
 ```
 to start the server. Every change in the code, html file or logos requires run.sh to be stopped and started again!
 
+## Inviting an external user
 
+![share a](keycloak_images/049.png)
+
+---
+
+![share b](keycloak_images/50.png)
+
+---
+
+![share c](keycloak_images/51.png)
+
+---
