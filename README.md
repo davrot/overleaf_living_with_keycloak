@@ -806,14 +806,22 @@ to start the server. Every change in the code, html file or logos requires run.s
 
 ## Inviting an external user
 
+We invite a user via the share function in one of the LaTex projects:
+
 ![share a](keycloak_images/049.png)
 
 ---
 
-![share b](keycloak_images/50.png)
+![share b](keycloak_images/050.png)
 
 ---
 
-![share c](keycloak_images/51.png)
+![share c](keycloak_images/051.png)
+
+---
+
+The user gets and email and goes to the register page:
+
+![register a](keycloak_images/052.png)
 
 ---
