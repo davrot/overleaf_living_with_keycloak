@@ -825,3 +825,37 @@ The user gets and email and goes to the register page:
 ![register a](keycloak_images/052.png)
 
 ---
+
+![register b](keycloak_images/053.png)
+
+---
+
+![register c](keycloak_images/054.png)
+
+---
+
+![register d](keycloak_images/055.png)
+
+---
+
+![register e](keycloak_images/056.png)
+
+---
+
+![register f](keycloak_images/057.png)
+
+---
+
+Join the project
+
+![join a](keycloak_images/058.png)
+
+---
+
+![join b](keycloak_images/059.png)
+
+---
+
+![join c](keycloak_images/060.png)
+
+---
