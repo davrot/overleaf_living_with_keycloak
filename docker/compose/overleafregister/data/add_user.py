@@ -5,6 +5,8 @@ from requests.auth import HTTPBasicAuth  # type: ignore
 
 def add_keycloak_user(username):
 
+    print(f"Start to create user {username} via OIDC")
+
     with open("config.json", "r") as file:
         config = json.load(file)
 
@@ -16,6 +18,7 @@ def add_keycloak_user(username):
     }
     users_url = f"{config['keycloak_url']}/admin/realms/master/users"
 
+    print("-- Get token")
     # Get token
     try:
         response = requests.post(
@@ -37,6 +40,8 @@ def add_keycloak_user(username):
     # Check if user exists
     params = {"username": username, "exact": "true"}
 
+    print("-- Check if user exists")
+
     try:
         response = requests.get(users_url, headers=headers, params=params)
         response.raise_for_status()
@@ -50,6 +55,8 @@ def add_keycloak_user(username):
 
     except requests.exceptions.HTTPError:
         return False
+
+    print("-- Make new user")
 
     # Make new user
     new_user = {
@@ -69,5 +76,7 @@ def add_keycloak_user(username):
 
     except requests.exceptions.HTTPError:
         return False
+
+    print("-- DONE")
 
     return True

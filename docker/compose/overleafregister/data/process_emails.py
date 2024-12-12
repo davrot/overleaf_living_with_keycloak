@@ -34,6 +34,7 @@ def process_emails(
     for blocked_user in blocked_users["blocked_users"]:
         if mail_address == blocked_user:
             return False
+    print(f"{mail_address} -- is not blocked")
 
     is_email_allowed: bool = False
 
@@ -41,17 +42,20 @@ def process_emails(
         email_to_find=mail_address, container_name=container_name_mongo, port=port_mongo
     ):
         is_email_allowed = True
+        print(f"{mail_address} -- eMail is invited")
 
     if check_user(
         email_to_find=mail_address, container_name=container_name_mongo, port=port_mongo
     ):
         is_email_allowed = True
+        print(f"{mail_address} -- eMail is already registered")
 
     if is_email_allowed is False:
         domain_found: bool = False
         for domain in allowed_domains["allowed_domains"]:
             if mail_address.endswith(domain):
                 domain_found = True
+                print(f"{mail_address} -- domain was found")
 
         if domain_found is False:
             return False
