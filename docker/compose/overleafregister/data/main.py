@@ -57,7 +57,6 @@ def index() -> Response:
                 mail_address=email,
                 container_name_mongo=container_name_mongo,
                 port_mongo=port_mongo,
-                container_name_overleaf=container_name_overleaf,
             ):
                 return redirect(keycloak_url)
             else:
