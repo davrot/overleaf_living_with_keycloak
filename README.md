@@ -696,3 +696,11 @@ sh exec_list_user.sh
 >> up.sh
 ```
 
+# Prepare the register container for externals (/docker/compose/overleafregister/data)
+
+## Keycloak: Add service user
+
+## Keycloak: Modify client 
+
+
+
