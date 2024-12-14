@@ -1,0 +1,19 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-13 00:07:35.684690573 +0000
++++ ../5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-13 00:06:43.257322710 +0000
+@@ -946,7 +946,7 @@
+     pdfPreviewPromotions: [],
+     diagnosticActions: [],
+     sourceEditorCompletionSources: [],
+-    sourceEditorSymbolPalette: [],
++    sourceEditorSymbolPalette: ['@/features/symbol-palette/components/symbol-palette'],
+     sourceEditorToolbarComponents: [],
+     editorPromotions: [],
+     langFeedbackLinkingWidgets: [],
+@@ -976,6 +976,7 @@
+     'launchpad',
+     'server-ce-scripts',
+     'user-activate',
++	'symbol-palette',
+   ],
+   viewIncludes: {},
+ 
