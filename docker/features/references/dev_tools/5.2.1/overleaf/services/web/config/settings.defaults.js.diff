@@ -1,5 +1,5 @@
---- /docker/features/_masterfiles/5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-13 00:24:53.563269274 +0000
-+++ ../5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-13 00:24:29.332558249 +0000
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-14 21:49:53.481301875 +0000
++++ ../5.2.1/overleaf/services/web/config/settings.defaults.js	2024-12-14 20:01:00.876373973 +0000
 @@ -259,6 +259,9 @@
      notifications: {
        url: `http://${process.env.NOTIFICATIONS_HOST || '127.0.0.1'}:3042`,
