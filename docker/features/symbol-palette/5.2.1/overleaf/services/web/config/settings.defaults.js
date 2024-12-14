@@ -976,7 +976,7 @@ module.exports = {
     'launchpad',
     'server-ce-scripts',
     'user-activate',
-	'symbol-palette',
+    'symbol-palette',
   ],
   viewIncludes: {},
 
