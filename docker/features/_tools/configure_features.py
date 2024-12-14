@@ -3,8 +3,7 @@ import glob
 import strictyaml as yaml  # type: ignore
 from collections import Counter
 import os
-import shutil
-import subprocess
+
 
 # import diff_match_patch as dmp_module
 
