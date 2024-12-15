@@ -724,6 +724,21 @@ To disable it:
 >> sh disable_feature.sh
 ```
 
+## Activate login-page modification (/docker/features/login-page)
+
+You want to modify /5.2.1/overleaf/services/web/app/views/user/login.pug such that I will look like you want it..
+
+```
+>> cd /docker/features/login-page
+>> sh enable_feature.sh
+```
+
+To disable it: 
+```
+>> cd /docker/features/login-page
+>> sh disable_feature.sh
+```
+
 
 ## Make a HajTex user into an admin
 
@@ -892,6 +907,19 @@ Inside the container you can use
 >> sh run.sh
 ```
 to start the server. Every change in the code, html file or logos requires run.sh to be stopped and started again!
+
+## Activate Register Button (/docker/features/registration-page)
+
+```
+>> cd /docker/features/registration-page
+>> sh enable_feature.sh
+```
+
+To disable it: 
+```
+>> cd /docker/features/registration-page
+>> sh disable_feature.sh
+```
 
 ## Inviting an external user
 
