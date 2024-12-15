@@ -675,6 +675,32 @@ To disable it:
 >> sh disable_feature.sh
 ```
 
+# Activate Symbol Palette (/docker/features/symbol-palette)
+
+```
+>> cd /docker/features/symbol-palette
+>> sh enable_feature.sh
+```
+
+To disable it: 
+```
+>> cd /docker/features/symbol-palette
+>> sh disable_feature.sh
+```
+
+# Activate Reference bib plugin (/docker/features/references)
+
+```
+>> cd /docker/features/references
+>> sh enable_feature.sh
+```
+
+To disable it: 
+```
+>> cd /docker/features/references
+>> sh disable_feature.sh
+```
+
 # Activate OICD feature (/docker/features/oidc)
 
 We need to fix the callback link int keycloak to https://FQDN/login/oidc/callback
