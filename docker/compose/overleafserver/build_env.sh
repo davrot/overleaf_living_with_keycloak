@@ -16,9 +16,9 @@ OVERLEAF_EMAIL_SMTP_SECURE=true
 OVERLEAF_EMAIL_SMTP_USER=overleaf
 
 # Other
-OVERLEAF_APP_NAME="University of Bremen -- Overleaf"
-OVERLEAF_NAV_TITLE="Uni Bremen Overleaf"
-OVERLEAF_CUSTOM_EMAIL_FOOTER="University of Bremen -- Overleaf"
+OVERLEAF_APP_NAME="University of Bremen -- HajTex"
+OVERLEAF_NAV_TITLE="Uni Bremen HajTex"
+OVERLEAF_CUSTOM_EMAIL_FOOTER="University of Bremen -- HajTex"
 
 # ##################################################
 
