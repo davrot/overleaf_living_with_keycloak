@@ -1,0 +1,2 @@
+volumes:
+  - /docker/features/registration-page/5.2.1/overleaf/services/web/app/src/infrastructure/Features.js:/overleaf/services/web/app/src/infrastructure/Features.js

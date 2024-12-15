@@ -1,0 +1,19 @@
+--- /docker/features/_masterfiles/5.2.1/overleaf/services/web/app/src/infrastructure/Features.js	2024-12-15 02:34:55.953241514 +0000
++++ ../5.2.1/overleaf/services/web/app/src/infrastructure/Features.js	2024-12-15 02:33:45.071094111 +0000
+@@ -52,10 +52,7 @@
+       case 'homepage':
+         return Boolean(Settings.enableHomepage)
+       case 'registration-page':
+-        return (
+-          !Features.externalAuthenticationSystemUsed() ||
+-          Boolean(Settings.overleaf)
+-        )
++        return Boolean(Settings.overleaf)
+       case 'registration':
+         return Boolean(Settings.overleaf)
+       case 'chat':
+@@ -99,3 +96,4 @@
+ }
+ 
+ module.exports = Features
++

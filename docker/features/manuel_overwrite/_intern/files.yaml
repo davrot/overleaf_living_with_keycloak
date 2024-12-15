@@ -1,3 +1,4 @@
 volumes:
   - /docker/features/manuel_overwrite/5.2.1/overleaf/services/web/locales/en.json:/overleaf/services/web/locales/en.json
+  - /docker/features/manuel_overwrite/5.2.1/overleaf/services/web/app/src/infrastructure/Features.js:/overleaf/services/web/app/src/infrastructure/Features.js
   - /docker/features/manuel_overwrite/5.2.1/overleaf/services/web/config/settings.defaults.js:/overleaf/services/web/config/settings.defaults.js
