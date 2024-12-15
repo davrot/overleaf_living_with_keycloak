@@ -1,0 +1,35 @@
+extends ../layout-marketing
+
+block content
+	main.content.content-alt#main-content
+		.container
+			.row
+				.card
+					.page-header
+						h1 #{translate("log_in")}
+					.card-body.text-center
+						p
+							img(src='https://overleaf.pip.uni-bremen.de/register/static/logo_ub.png' style='width:300px;')
+							img(src='https://overleaf.pip.uni-bremen.de/register/static/logo_pip.jpg' style='width:300px;')
+						p
+							a(href="https://www.uni-bremen.de/en/pip") University of Bremen FB1 -- PIP
+						p
+							| HajTex site of the 
+						p
+							| Postgraduate International Programme in Physics and Electrical Engineering 
+						p
+							| PIP @ University of Bremen FB1!
+						p
+							| If you are an invited external guest, please Sign Up first. 
+						p
+						a.btn.btn-primary.mt-2(href="/register", role="button") Sign Up
+						p
+						p
+							| If you are a member of the University and want to use an email username@[...].uni-bremen.de, please Sign Up too.
+						p
+						a.btn.btn-primary.mt-2(href="/register", role="button") Sign Up
+						p
+						p
+							| For persons with ZfN university account, just login.
+						p
+						a.btn.btn-primary.mt-2(href="/login/oidc", role="button") #{translate("log_in")} 

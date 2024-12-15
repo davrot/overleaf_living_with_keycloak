@@ -1,0 +1,1 @@
+Allows to replace the login page of the site
