@@ -1,0 +1,6 @@
+{
+    "oidc_base_url": "https://overleaf.neuro.uni-bremen.de/sso",
+    "hajtex_base_url": "https://overleaf.neuro.uni-bremen.de",
+    "admin_username": "automation@non.no",
+    "admin_password": "REDACTED",
+}
