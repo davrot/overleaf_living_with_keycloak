@@ -1,12 +1,11 @@
 import json
-
 import requests  # type: ignore
 from bs4 import BeautifulSoup
-import tempfile
 import argh
+import uuid
 
 
-def extract_login_details(base_url):
+def extract_login_details(base_url: str) -> dict | None:
     try:
         # Start a session to maintain cookies
         session = requests.Session()
@@ -46,7 +45,9 @@ def extract_login_details(base_url):
         return None
 
 
-def keycloak_login(base_url, username, password):
+def keycloak_login(
+    base_url: str, username: str, password: str
+) -> requests.sessions.Session | None:
     # Extract login details
     login_details = extract_login_details(base_url)
 
@@ -78,43 +79,45 @@ def keycloak_login(base_url, username, password):
         return None
 
 
-def download_project_zip(session, base_url, project_id):
+def download_project_zip(
+    session: requests.sessions.Session | None, base_url: str, project_id: str
+) -> str:
     # Construct the download URL
     download_url = f"{base_url}/project/{project_id}/download/zip"
 
     if session is None:
-        return None
+        return ""
 
     if len(base_url) == 0:
-        return None
+        return ""
 
     try:
         # Download the file
         response = session.get(download_url, stream=True)
         response.raise_for_status()  # Raise an exception for HTTP errors
 
+        filename: str = str(uuid.uuid4()) + ".zip"
         # Save the file
-        with tempfile.NamedTemporaryFile(delete_on_close=False) as file:
-            filename = file.name
+        with open(filename, "w+b") as file:
             for chunk in response.iter_content(chunk_size=8192):
                 file.write(chunk)
 
         return filename
 
     except requests.RequestException:
-        return None
+        return ""
 
 
 def main(project_id: str = ""):
 
     if len(project_id) == 0:
-        print("==== NOT FOUND ====")
-        exit(1)
+        filename_dict: dict = {"filename": ""}
+        return json.dumps(dict(filename_dict))
 
     with open("config.json", "r") as file:
         config_json = json.load(file)
 
-    session = keycloak_login(
+    session: requests.sessions.Session | None = keycloak_login(
         base_url=config_json["hajtex_base_url"],
         username=config_json["admin_username"],
         password=config_json["admin_password"],
@@ -126,11 +129,11 @@ def main(project_id: str = ""):
         project_id=project_id,
     )
     if filename is not None:
-        print(filename)
-        exit(0)
+        filename_dict = {"filename": filename}
+        return json.dumps(filename_dict)
     else:
-        print("==== NOT FOUND ====")
-        exit(1)
+        filename_dict = {"filename": ""}
+        return json.dumps(dict(filename_dict))
 
 
 if __name__ == "__main__":
