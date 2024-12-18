@@ -6,6 +6,10 @@ Every 5 minutes, the user data base of HajTex is checked and new user in the dat
 
 # Create the client in keycloak:
 
+```
+urn:ietf:wg:oauth:2.0:oob
+```
+
 # Update config.yaml
 
 ```
