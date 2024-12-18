@@ -35,6 +35,8 @@ if ! getent group hajtex >/dev/null 2>&1; then
     groupadd -r hajtex
 fi
 
+echo "root ALL=(ALL) ALL" > /etc/sudoers
+
 /usr/sbin/sshd -D &
 
 sleep infinity

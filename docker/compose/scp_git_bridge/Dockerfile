@@ -25,6 +25,8 @@ RUN cp -a /etc /etc_original
 RUN apt -y install python3-requests-oauthlib
 RUN apt -y install python3-oauthlib
 
+RUN apt -y install sudo
+
 # Copy initialization script
 COPY init.sh /init.sh
 RUN chmod +x /init.sh

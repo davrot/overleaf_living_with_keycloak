@@ -1,4 +1,5 @@
 # PAM configuration for the Secure Shell service
+# auth sufficient pam_exec.so expose_authtok log=/var/log/kc-ssh-pam.log /process_user_login.sh
 # For password authentication
 auth sufficient pam_exec.so expose_authtok log=/var/log/kc-ssh-pam.log /process_user_auth.sh
 

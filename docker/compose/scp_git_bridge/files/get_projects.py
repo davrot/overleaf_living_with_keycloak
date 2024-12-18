@@ -5,6 +5,8 @@ import argh
 import uuid
 import os
 import glob
+import subprocess
+
 
 def extract_login_details(base_url: str) -> dict | None:
     try:
@@ -81,7 +83,7 @@ def keycloak_login(
 
 
 def download_project_zip(
-    session: requests.sessions.Session | None, base_url: str, project_id: str, base_path:str
+    session: requests.sessions.Session | None, base_url: str, project_id: str, base_path:str, username:str
 ) -> str:
     # Construct the download URL
     download_url = f"{base_url}/project/{project_id}/download/zip"
@@ -96,12 +98,29 @@ def download_project_zip(
         # Download the file
         response = session.get(download_url, stream=True)
         response.raise_for_status()  # Raise an exception for HTTP errors
-
-        filename: str = os.path.join(base_path,  f"{project_id}.zip")
+        os.makedirs(os.path.join(base_path,  f"{project_id}"), exist_ok=True, mode=0o700)
+        filename: str = os.path.join(base_path,  f"{project_id}", "data.zip")
         # Save the file
         with open(filename, "w+b") as file:
             for chunk in response.iter_content(chunk_size=8192):
                 file.write(chunk)
+
+        subprocess.run([f"cd /downloads/{username}/{project_id} && /usr/bin/unzip -o data.zip " ], shell=True)
+        subprocess.run([f"rm -f /downloads/{username}/{project_id}/data.zip" ], shell=True)
+        subprocess.run([f"chown -R {username}:hajtex /downloads/{username}/{project_id} " ], shell=True)
+        subprocess.run([f"chmod -R 0700 /downloads/{username}/{project_id} " ], shell=True)
+
+        if not os.path.isdir("/downloads/{username}/{project_id}/.git"):
+            subprocess.run([f"sudo -u {username} /usr/bin/git config --global user.email {username} " ], shell=True)
+            subprocess.run([f"sudo -u {username} /usr/bin/git config --global user.name {username} " ], shell=True)
+            subprocess.run([f"cd /downloads/{username}/{project_id} && sudo -u {username} /usr/bin/git init -q " ], shell=True)
+
+        subprocess.run([f"cd /downloads/{username}/{project_id} && sudo -u {username} /usr/bin/git add --all " ], shell=True)
+        subprocess.run([f"cd /downloads/{username}/{project_id} && sudo -u {username} /usr/bin/git commit -m 'by HajTex' " ], shell=True)
+        subprocess.run([f"chown -R {username}:hajtex /downloads/{username}/{project_id} " ], shell=True)
+        subprocess.run([f"chmod -R 0700 /downloads/{username}/{project_id} " ], shell=True)
+
+
 
         return filename
 
@@ -149,7 +168,8 @@ def main(username:str) -> None:
             session=session,
             base_url=config_json["hajtex_base_url"],
             project_id=project_id,
-            base_path=os.path.join(config_json["base_dir"], f"{username}")
+            base_path=os.path.join(config_json["base_dir"], f"{username}"),
+            username=username,
         )
 
 if __name__ == "__main__":
