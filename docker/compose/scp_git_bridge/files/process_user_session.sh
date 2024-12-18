@@ -8,5 +8,8 @@ fi
 # Run your post-login scripts
 python3 /list_projects_of_user.py "$PAM_USER"
 python3 /get_projects.py "$PAM_USER"
+python3 /clean_project.py "$PAM_USER"
+rm -f /downloads/${PAM_USER}/projects.json
+
 exit 0
 

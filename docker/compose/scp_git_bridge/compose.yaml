@@ -16,6 +16,8 @@ services:
       - /docker/compose/hajtex_sshd/files/update_userlist.py:/update_userlist.py:ro
       - /docker/compose/hajtex_sshd/files/list_projects_of_user.py:/list_projects_of_user.py:ro
       - /docker/compose/hajtex_sshd/files/get_projects.py:/get_projects.py:ro
+      - /docker/compose/hajtex_sshd/files/clean_project.py:/clean_project.py:ro
+
       - /docker/compose/hajtex_sshd/files/process_user_session.sh:/process_user_session.sh:ro
       - /docker/compose/hajtex_sshd/files/process_user_auth.sh:/process_user_auth.sh:ro
 
