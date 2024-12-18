@@ -1,0 +1,2 @@
+# m h  dom mon dow   command
+*/5 * * * * sh /docker/compose/hajtex_sshd/exec_update_userlist.sh

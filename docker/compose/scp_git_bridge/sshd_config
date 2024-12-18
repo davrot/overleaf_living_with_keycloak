@@ -1,0 +1,15 @@
+PasswordAuthentication yes
+PermitEmptyPasswords no
+KbdInteractiveAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem	sftp	internal-sftp
+
+Match Group hajtex
+    ChrootDirectory /downloads
+    ForceCommand internal-sftp 
+    AllowTcpForwarding no
+    X11Forwarding no
+    PasswordAuthentication yes
