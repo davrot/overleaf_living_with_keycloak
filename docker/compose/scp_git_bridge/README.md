@@ -4,7 +4,15 @@ If the user logs in via scp (in the moment on port 993, please don't forget to a
 
 Every 5 minutes, the user data base of HajTex is checked and new user in the database are created. 
 
-Create image:
+# Create the client in keycloak:
+
+# Update config.yaml
+
+```
+clientsecret = "REDACTED"
+```
+
+# Create image:
 
 ```
 >> make_image.sh
