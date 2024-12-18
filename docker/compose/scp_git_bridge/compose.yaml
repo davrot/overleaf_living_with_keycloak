@@ -8,17 +8,20 @@ services:
       - /docker/compose/hajtex_sshd/downloads:/downloads
       - /docker/compose/hajtex_sshd/etc:/etc
 
-      - /docker/compose/hajtex_sshd/hostname:/etc/hostname:ro
-      - /docker/compose/hajtex_sshd/hosts:/etc/hosts:ro
-      - /docker/compose/hajtex_sshd/resolv.conf:/etc/resolv.conf:ro
-      - /docker/compose/hajtex_sshd/sshd_config:/etc/ssh/sshd_config:ro
-      - /docker/compose/hajtex_sshd/pam_sshd:/etc/pam.d/sshd:ro
+      - /docker/compose/hajtex_sshd/files/hostname:/etc/hostname:ro
+      - /docker/compose/hajtex_sshd/files/hosts:/etc/hosts:ro
+      - /docker/compose/hajtex_sshd/files/resolv.conf:/etc/resolv.conf:ro
+      - /docker/compose/hajtex_sshd/files/sshd_config:/etc/ssh/sshd_config:ro
+      - /docker/compose/hajtex_sshd/files/pam_sshd:/etc/pam.d/sshd:ro
+      - /docker/compose/hajtex_sshd/files/update_userlist.py:/update_userlist.py:ro
+      - /docker/compose/hajtex_sshd/files/list_projects_of_user.py:/list_projects_of_user.py:ro
+      - /docker/compose/hajtex_sshd/files/get_projects.py:/get_projects.py:ro
+      - /docker/compose/hajtex_sshd/files/process_user_session.sh:/process_user_session.sh:ro
+      - /docker/compose/hajtex_sshd/files/process_user_auth.sh:/process_user_auth.sh:ro
+
       - /docker/compose/hajtex_sshd/config.toml:/etc/kc-ssh-pam/config.toml:ro
-      - /docker/compose/hajtex_sshd/update_userlist.py:/update_userlist.py:ro
-      - /docker/compose/hajtex_sshd/list_projects_of_user.py:/list_projects_of_user.py:ro
-      - /docker/compose/hajtex_sshd/process_user_login.sh:/process_user_login.sh:ro
       - /docker/compose/hajtex_sshd/config.json:/config.json:ro
-      - /docker/compose/hajtex_sshd/get_projects.py:/get_projects.py:ro
+
 
     ports:
       - 993:22
