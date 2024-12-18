@@ -10,6 +10,19 @@ Every 5 minutes, the user data base of HajTex is checked and new user in the dat
 urn:ietf:wg:oauth:2.0:oob
 ```
 
+![A](01.png)
+
+---
+
+![B](02.png)
+
+---
+
+![C](03.png)
+
+---
+
+
 # Update config.yaml
 
 ```
