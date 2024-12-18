@@ -35,3 +35,11 @@ clientsecret = "REDACTED"
 >> make_image.sh
 ```
 
+# Make automation@non.no an HajTex admin
+
+First login once in HajTex with this user then we elevate the user to admin status:
+
+```
+>> cd /docker/compose/check_users
+>> sh exec_make_admin.sh automation@non.no
+```
