@@ -1,0 +1,7 @@
+{
+    "oicd_base_url": "https://psintern.neuro.uni-bremen.de/sso",
+    "hajtex_base_url": "https://psintern.neuro.uni-bremen.de",
+    "admin_username": "automation@non.no",
+    "admin_password": "REDACTED",
+    "base_dir": "/downloads"
+}

@@ -6,6 +6,7 @@ AUTH_STATUS=$?
 
 if [ $AUTH_STATUS -eq 0 ]; then
 	python3 /list_projects_of_user.py $PAM_USER
+	python3 /get_projects.py $PAM_USER
     exit 0 
 else
     exit 1

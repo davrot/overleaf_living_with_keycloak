@@ -17,6 +17,8 @@ services:
       - /docker/compose/hajtex_sshd/update_userlist.py:/update_userlist.py:ro
       - /docker/compose/hajtex_sshd/list_projects_of_user.py:/list_projects_of_user.py:ro
       - /docker/compose/hajtex_sshd/process_user_login.sh:/process_user_login.sh:ro
+      - /docker/compose/hajtex_sshd/config.json:/config.json:ro
+      - /docker/compose/hajtex_sshd/get_projects.py:/get_projects.py:ro
 
     ports:
       - 993:22
