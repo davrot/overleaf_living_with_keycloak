@@ -20,9 +20,11 @@ services:
 
       - /docker/compose/hajtex_sshd/files/process_user_session.sh:/process_user_session.sh:ro
       - /docker/compose/hajtex_sshd/files/process_user_auth.sh:/process_user_auth.sh:ro
+      - /docker/compose/hajtex_sshd/files/build_jail.sh:/build_jail.sh:ro
 
       - /docker/compose/hajtex_sshd/config.toml:/etc/kc-ssh-pam/config.toml:ro
       - /docker/compose/hajtex_sshd/config.json:/config.json:ro
+
 
 
     ports:

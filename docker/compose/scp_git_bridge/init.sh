@@ -8,6 +8,7 @@ if [ ! -d /etc/skel ]; then
 	rm -f /etc/skel/.profile
 	rm -f /etc/skel/.bashrc
 	rm -f /etc/skel/.bash_logout
+    rm -rf /etc_original
 fi
 
 
@@ -39,6 +40,8 @@ echo "root ALL=(ALL) ALL" > /etc/sudoers
 
 chown root:root /downloads
 chmod 755 /downloads
+
+sh /build_jail.sh
 
 /usr/sbin/sshd -D &
 

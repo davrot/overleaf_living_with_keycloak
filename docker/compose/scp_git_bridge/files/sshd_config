@@ -11,7 +11,7 @@ AuthorizedKeysFile .ssh/authorized_keys
 
 Match Group hajtex
     ChrootDirectory /downloads/%u
-#    ForceCommand git-shell
+#    ForceCommand /bin/git-shell
     AllowTcpForwarding no
     X11Forwarding no
     PasswordAuthentication yes
