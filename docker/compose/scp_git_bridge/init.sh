@@ -37,6 +37,9 @@ fi
 
 echo "root ALL=(ALL) ALL" > /etc/sudoers
 
+chown root:root /downloads
+chmod 755 /downloads
+
 /usr/sbin/sshd -D &
 
 sleep infinity

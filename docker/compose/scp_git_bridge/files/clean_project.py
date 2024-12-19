@@ -28,6 +28,13 @@ def main(username:str) -> None:
     for i in range(0, len(key_list)):
         key_list[i] = os.path.join("/downloads/", f"{username}", key_list[i])
 
+    key_list.append(os.path.join("/downloads/", f"{username}", "bin"))
+    key_list.append(os.path.join("/downloads/", f"{username}", "dev"))
+    key_list.append(os.path.join("/downloads/", f"{username}", "lib"))
+    key_list.append(os.path.join("/downloads/", f"{username}", "lib64"))
+    key_list.append(os.path.join("/downloads/", f"{username}", "usr"))
+    key_list.append(os.path.join("/downloads/", f"{username}", "sshkey"))
+
     for entry in glob.glob(os.path.join("/downloads/", f"{username}", "*")):
         if os.path.isdir(entry):
             if not (entry in key_list):

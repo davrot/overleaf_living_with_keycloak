@@ -34,6 +34,20 @@ for user in cursor:
         subprocess.run([f"chmod 700 /downloads/{username}/.ssh " ], shell=True)
         subprocess.run([f"chmod 600 /downloads/{username}/.ssh/authorized_keys " ], shell=True)
         subprocess.run([f"chown -R {username}:hajtex /downloads/{username}/.ssh " ], shell=True)
+        subprocess.run([f"sudo -u {username} /usr/bin/git config --global user.email {username} " ], shell=True)
+        subprocess.run([f"sudo -u {username} /usr/bin/git config --global user.name {username} " ], shell=True)
+
+        subprocess.run([f"mkdir -p /downloads/{username}/sshkey " ], shell=True)
+        subprocess.run([f"cp /downloads/{username}/.ssh/hajtex.pub /downloads/{username}/sshkey " ], shell=True)
+        subprocess.run([f"cp /downloads/{username}/.ssh/hajtex /downloads/{username}/sshkey " ], shell=True)
+        subprocess.run([f"chown -R {username}:hajtex /downloads/{username}/sshkey " ], shell=True)
+        subprocess.run([f"cd /downloads/{username}/sshkey && sudo -u {username} /usr/bin/git init -q " ], shell=True)
+        subprocess.run([f"cd /downloads/{username}/sshkey && sudo -u {username} /usr/bin/git add --all " ], shell=True)
+        subprocess.run([f"cd /downloads/{username}/sshkey && sudo -u {username} /usr/bin/git commit -m 'by HajTex' " ], shell=True)
+        subprocess.run([f"chown root:root /downloads/{username}/sshkey " ], shell=True)
+        subprocess.run([f"chmod -R 0755 /downloads/{username}/sshkey " ], shell=True)
+
+
 
 client.close()
 

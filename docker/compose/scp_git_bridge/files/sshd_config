@@ -5,13 +5,13 @@ UsePAM yes
 X11Forwarding no
 PrintMotd no
 AcceptEnv LANG LC_*
-Subsystem	sftp	internal-sftp
+Subsystem git-shell /usr/bin/git-shell
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
 
 Match Group hajtex
-    ChrootDirectory /downloads
-    ForceCommand internal-sftp 
+    ChrootDirectory /downloads/%u
+#    ForceCommand git-shell
     AllowTcpForwarding no
     X11Forwarding no
     PasswordAuthentication yes

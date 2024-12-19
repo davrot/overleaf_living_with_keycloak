@@ -118,7 +118,8 @@ def download_project_zip(
         subprocess.run([f"cd /downloads/{username}/{project_id} && sudo -u {username} /usr/bin/git add --all " ], shell=True)
         subprocess.run([f"cd /downloads/{username}/{project_id} && sudo -u {username} /usr/bin/git commit -m 'by HajTex' " ], shell=True)
         subprocess.run([f"chown -R {username}:hajtex /downloads/{username}/{project_id} " ], shell=True)
-        subprocess.run([f"chmod -R 0700 /downloads/{username}/{project_id} " ], shell=True)
+        subprocess.run([f"chown root:root /downloads/{username}/{project_id} " ], shell=True)
+        subprocess.run([f"chmod -R 0755 /downloads/{username}/{project_id} " ], shell=True)
 
 
 
