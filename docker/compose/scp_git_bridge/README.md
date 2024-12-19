@@ -1,7 +1,5 @@
 # TODO:
 * Better way to get the output.zip
-* The resolve.conf is not automatically generated.
-
 
 
 If the user logs in via scp (in the moment on port 993, please don't forget to allow port 993 via ufw allow 993), a package list with the HajTex documents for that user is generated. ssh is blocked. 
