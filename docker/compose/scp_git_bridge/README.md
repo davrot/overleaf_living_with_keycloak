@@ -38,7 +38,18 @@ Otherwise, login will fail without the user directories. You can also run it man
 ```
 sh /docker/compose/hajtex_sshd/exec_update_userlist.sh
 ```
+# Port 993
 
+If you don't like port 993 you can change the compose.yaml
+```    
+    ports:
+      - 993:22
+```
+accordingly. But don't forget you firewall:
+
+```    
+ufw allow 993:22
+```
 
 # ssh / scp / git-shell authentification against KeyCloak
 
