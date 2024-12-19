@@ -8,9 +8,6 @@ services:
       - /docker/compose/hajtex_sshd/downloads:/downloads
       - /docker/compose/hajtex_sshd/etc:/etc
 
-      - /docker/compose/hajtex_sshd/files/hostname:/etc/hostname:ro
-      - /docker/compose/hajtex_sshd/files/hosts:/etc/hosts:ro
-      - /docker/compose/hajtex_sshd/files/resolv.conf:/etc/resolv.conf:ro
       - /docker/compose/hajtex_sshd/files/sshd_config:/etc/ssh/sshd_config:ro
       - /docker/compose/hajtex_sshd/files/pam_sshd:/etc/pam.d/sshd:ro
       - /docker/compose/hajtex_sshd/files/update_userlist.py:/update_userlist.py:ro
