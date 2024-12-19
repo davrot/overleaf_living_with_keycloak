@@ -63,3 +63,9 @@ First login once in HajTex with this user then we elevate the user to admin stat
 >> cd /docker/compose/check_users
 >> sh exec_make_admin.sh automation@non.no
 ```
+
+Udpate config.json
+```
+"admin_password": "REDACTED",
+```
+with the password of the automation@non.no user.
