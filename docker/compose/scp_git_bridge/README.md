@@ -21,6 +21,25 @@ git clone ssh://davrot@uni-bremen.de@psintern.neuro.uni-bremen.de:993/6759fdf66c
 ```
 
 
+If you don't like Keycloak authentification (e.g. want to change to a LDAP server), you need to work on the first line of /files/pam_sshd
+
+```
+auth sufficient pam_exec.so expose_authtok log=/var/log/kc-ssh-pam.log /process_user_auth.sh
+```
+
+Don't forget the crontab entry for host:
+
+```
+# m h  dom mon dow   command
+*/5 * * * * sh /docker/compose/hajtex_sshd/exec_update_userlist.sh
+```
+
+Otherwise, login will fail without the user directories. You can also run it manually:
+```
+sh /docker/compose/hajtex_sshd/exec_update_userlist.sh
+```
+
+
 # ssh / scp / git-shell authentification against KeyCloak
 
 ## Create the client in keycloak:
