@@ -97,18 +97,36 @@ ufw allow in on br-$nid
 ufw route allow in on br-$nid
 ufw route allow out on br-$nid
 iptables -t nat -A POSTROUTING ! -o br-$nid -s $snetz -j MASQUERADE
+echo Custom NAT rules for /etc/ufw/before.rules
+echo -A POSTROUTING ! -o br-$nid -s $snetz -j MASQUERADE
 ```
 
 ```
 docker network create overleaf-network
-snetz=`docker network inspect overleaf-network | grep "Subnet"  | sed s/" "/""/g | sed s/"\,"/""/g | sed s/":"/"\n"/g  | grep -v "Subnet" | sed s/'"'
+snetz=`docker network inspect overleaf-network | grep "Subnet"  | sed s/" "/""/g | sed s/"\,"/""/g | sed s/":"/"\n"/g  | grep -v "Subnet" | sed s/'"'/''/g`
 nid=`docker network ls | grep overleaf-network | awk '{print $1}'`
 
 ufw allow in on br-$nid
 ufw route allow in on br-$nid
 ufw route allow out on br-$nid
 iptables -t nat -A POSTROUTING ! -o br-$nid -s $snetz -j MASQUERADE
+echo Custom NAT rules for /etc/ufw/before.rules
+echo -A POSTROUTING ! -o br-$nid -s $snetz -j MASQUERADE
 ```
+You need the two lines like this into the beginning of the /etc/ufw/before.rules:
+
+```
+*nat
+:POSTROUTING ACCEPT [0:0]
+
+# Custom NAT rules
+-A POSTROUTING ! -o docker0 -s 172.18.0.0/16 -j MASQUERADE
+-A POSTROUTING ! -o br-5d2cab1cd019 -s 172.19.0.0/16 -j MASQUERADE
+-A POSTROUTING ! -o br-48eafa0368b4 -s 172.18.0.0/16 -j MASQUERADE
+
+COMMIT
+```
+
 Check if this worked:
 
 ```
