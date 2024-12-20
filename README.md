@@ -42,9 +42,9 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   
-  apt-get update
+apt-get update
   
-  apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 echo "{" > /etc/docker/daemon.json
 echo '  "iptables": false' >> /etc/docker/daemon.json 
