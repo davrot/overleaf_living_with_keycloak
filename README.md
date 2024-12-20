@@ -29,8 +29,6 @@ apt -y upgrade
 
 apt -y install git pkg-config libssl-dev curl mc argon2 ca-certificates net-tools ufw openssh-server
 
-apt -y install iptables-persistent
-
 install -m 0755 -d /etc/apt/keyrings
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -59,8 +57,6 @@ iptables -t nat -A POSTROUTING ! -o docker0 -s 172.18.0.0/16 -j MASQUERADE
 ufw allow in on docker0
 ufw route allow in on docker0
 ufw route allow out on docker0
-
-netfilter-persistent save
 
 docker run hello-world
 ```
