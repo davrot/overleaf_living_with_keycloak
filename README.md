@@ -60,6 +60,8 @@ ufw allow in on docker0
 ufw route allow in on docker0
 ufw route allow out on docker0
 
+netfilter-persistent save
+
 docker run hello-world
 ```
 
