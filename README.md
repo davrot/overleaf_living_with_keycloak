@@ -27,7 +27,9 @@ Install pip for python
 apt update
 apt upgrade
 
-apt install git pkg-config libssl-dev curl mc argon2 ca-certificates net-tools
+apt -y install git pkg-config libssl-dev curl mc argon2 ca-certificates net-tools
+
+apt -y install iptables-persistent
 
 install -m 0755 -d /etc/apt/keyrings
 
