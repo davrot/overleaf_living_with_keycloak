@@ -25,7 +25,7 @@ Install pip for python
 
 ```
 apt update
-apt upgrade
+apt -y upgrade
 
 apt -y install git pkg-config libssl-dev curl mc argon2 ca-certificates net-tools
 
