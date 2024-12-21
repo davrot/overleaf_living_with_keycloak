@@ -11,13 +11,13 @@ If a user logs in, the system builds / updates git repos of the user's projects.
 Get the ssh keys:
 
 ```
-git clone ssh://davrot@uni-bremen.de@psintern.neuro.uni-bremen.de:993/sshkey
+git clone ssh://davrot@uni-bremen.de@psintern.neuro.uni-bremen.de:993/sshkey.git
 ```
 
 Get the project 6759fdf66ca7b8bc5b81b184 :
 
 ```
-git clone ssh://davrot@uni-bremen.de@psintern.neuro.uni-bremen.de:993/6759fdf66ca7b8bc5b81b184
+git clone ssh://davrot@uni-bremen.de@psintern.neuro.uni-bremen.de:993/6759fdf66ca7b8bc5b81b184.git
 ```
 
 
