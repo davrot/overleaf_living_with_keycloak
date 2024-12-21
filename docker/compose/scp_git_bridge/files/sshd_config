@@ -1,0 +1,18 @@
+PasswordAuthentication yes
+PermitEmptyPasswords no
+KbdInteractiveAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+Match Group hajtex
+    ChrootDirectory /downloads/%u
+    ForceCommand /usr/sbin/rush
+    AllowTcpForwarding no
+    X11Forwarding no
+    PasswordAuthentication yes
+    PubkeyAuthentication yes
+    AuthorizedKeysFile .ssh/authorized_keys

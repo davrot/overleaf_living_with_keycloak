@@ -18,12 +18,13 @@ RUN apt -y install golang-go
 RUN apt -y install curl
 RUN apt -y install openssl
 RUN apt -y install libpam-script
-
-RUN mkdir -p /compile && cd /compile && git clone https://github.com/kha7iq/kc-ssh-pam.git && cd /compile/kc-ssh-pam && go build && mkdir -p /etc/kc-ssh-pam && cp /compile/kc-ssh-pam/kc-ssh-pam /etc/kc-ssh-pam 
-
 RUN apt -y install python3-requests-oauthlib
 RUN apt -y install python3-oauthlib
 RUN apt -y install sudo
+RUN apt -y install rush
+RUN apt -y install inetutils-syslogd
+
+RUN mkdir -p /compile && cd /compile && git clone https://github.com/kha7iq/kc-ssh-pam.git && cd /compile/kc-ssh-pam && go build && mkdir -p /etc/kc-ssh-pam && cp /compile/kc-ssh-pam/kc-ssh-pam /etc/kc-ssh-pam 
 
 RUN cp -a /etc /etc_original
 RUN rm -f /etc_original/hostname

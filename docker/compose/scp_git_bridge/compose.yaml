@@ -21,8 +21,7 @@ services:
 
       - /docker/compose/hajtex_sshd/config.toml:/etc/kc-ssh-pam/config.toml:ro
       - /docker/compose/hajtex_sshd/config.json:/config.json:ro
-
-
+      - /docker/compose/hajtex_sshd/files/update_user_jail.sh:/update_user_jail.sh:ro
 
     ports:
       - 993:22
